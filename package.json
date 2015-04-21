@@ -1,0 +1,23 @@
+{
+  "name": "hubot-tea-time",
+  "version": "1.0.0",
+  "description": "Reminds you when it is time for tea",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dan-mcdonald/hubot-tea-time.git"
+  },
+  "author": "Dan McDonald",
+  "license": "AGPL-1.0",
+  "bugs": {
+    "url": "https://github.com/dan-mcdonald/hubot-tea-time/issues"
+  },
+  "homepage": "https://github.com/dan-mcdonald/hubot-tea-time",
+  "dependencies": {
+    "coffee-script": "^1.9.2",
+    "node-schedule": "^0.2.6"
+  }
+}
