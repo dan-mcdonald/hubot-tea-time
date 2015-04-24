@@ -5,7 +5,7 @@
 schedule = require('node-schedule')
 
 module.exports = (bot) ->
-  console.log("TEATIME: loading tea time module...")
+  bot.logger.info "TEATIME: loading tea time module..."
   TEATIME_START_HOUR = 14
   TEATIME_START_MINUTE = 22
   TEATIME_END_HOUR = 16
@@ -44,9 +44,9 @@ module.exports = (bot) ->
     if inThePast(teaTime)
       scheduleNewTeaTime(nextTeaDay(forDate), res)
     else
-      console.log("TEATIME: Next tea time will be #{teaTime}")
+      bot.logger.info "TEATIME: Next tea time will be #{teaTime}"
       job = schedule.scheduleJob(teaTime, () ->
-        console.log("TEATIME: Cron scheduler fired at #{new Date()}")
+        bot.logger.info "TEATIME: Cron scheduler fired at #{new Date()}"
         res.send "@here I do believe it is time for tea. Who would like to go?"
         job.cancel()
         scheduleNewTeaTime(nextTeaDay(teaTime), res)
@@ -58,4 +58,4 @@ module.exports = (bot) ->
       firstTeaDay = nextTeaDay(firstTeaDay)
     scheduleNewTeaTime(firstTeaDay, res)
 
-  console.log("TEATIME: tea time module loaded")
+  bot.logger.info "TEATIME: tea time module loaded"
