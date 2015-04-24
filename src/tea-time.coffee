@@ -59,5 +59,6 @@ module.exports = (bot) ->
     if !isTeaDay(firstTeaDay)
       firstTeaDay = nextTeaDay(firstTeaDay)
     scheduleNewTeaTime(firstTeaDay, res)
+    res.send(res.random ["Certainly", "Of course", "Excellent choice", "Very well"])
 
   bot.logger.info "TEATIME: tea time module loaded"
