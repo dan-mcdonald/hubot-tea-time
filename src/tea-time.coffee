@@ -1,6 +1,8 @@
 # Description
 #   Reminds the team when it's tea time
 #
+# Commands:
+#   hubot remind for tea - Asks hubot to remind you when it's time for tea
 
 schedule = require('node-schedule')
 
