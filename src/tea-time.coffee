@@ -49,7 +49,7 @@ module.exports = (bot) ->
       bot.logger.info "TEATIME: Next tea time will be #{teaTime}"
       job = schedule.scheduleJob(teaTime, () ->
         bot.logger.info "TEATIME: Cron scheduler fired at #{new Date()}"
-        res.send "@here I do believe it is time for tea. Who would like to go?"
+        res.send "@here I do believe it is time for (tea). Who would like to go?"
         job.cancel()
         scheduleNewTeaTime(nextTeaDay(teaTime), res)
       )
